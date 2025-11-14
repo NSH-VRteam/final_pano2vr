@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 7.1.8/20986
 // Filename: NSH-UI auto resolution test - Copy.ggsk
-// Generated 2025-11-13T20:55:39
+// Generated 2025-11-14T18:05:59
 
 function pano2vrSkin(player,base) {
 	player.addVariable('Room_visibility_1F', 2, false, { ignoreInState: 0  });
@@ -4668,6 +4668,33 @@ function pano2vrSkin(player,base) {
 			me._left_top_cornerpotrait.style.transition='none';
 			me._left_top_cornerpotrait.style.visibility='hidden';
 			me._left_top_cornerpotrait.ggVisible=false;
+			if (
+				(
+					((me.ggUserdata.tags.indexOf("1F") != -1))
+				)
+			) {
+				me.__1st_floornames_ph.style.transition='none';
+				me.__1st_floornames_ph.style.visibility=(Number(me.__1st_floornames_ph.style.opacity)>0||!me.__1st_floornames_ph.style.opacity)?'inherit':'hidden';
+				me.__1st_floornames_ph.ggVisible=true;
+			}
+			if (
+				(
+					((me.ggUserdata.tags.indexOf("2F") != -1))
+				)
+			) {
+				me.__2nd_floornames_ph.style.transition='none';
+				me.__2nd_floornames_ph.style.visibility=(Number(me.__2nd_floornames_ph.style.opacity)>0||!me.__2nd_floornames_ph.style.opacity)?'inherit':'hidden';
+				me.__2nd_floornames_ph.ggVisible=true;
+			}
+			if (
+				(
+					((me.ggUserdata.tags.indexOf("3F") != -1))
+				)
+			) {
+				me.__3rd_floornames_ph.style.transition='none';
+				me.__3rd_floornames_ph.style.visibility=(Number(me.__3rd_floornames_ph.style.opacity)>0||!me.__3rd_floornames_ph.style.opacity)?'inherit':'hidden';
+				me.__3rd_floornames_ph.ggVisible=true;
+			}
 		}
 		me._floorplan_b_ph.onmouseenter=function (e) {
 			me.elementMouseOver['floorplan_b_ph']=true;
@@ -11277,6 +11304,15 @@ function pano2vrSkin(player,base) {
 			me._left_top_cornerpotrait.style.transition='none';
 			me._left_top_cornerpotrait.style.visibility=(Number(me._left_top_cornerpotrait.style.opacity)>0||!me._left_top_cornerpotrait.style.opacity)?'inherit':'hidden';
 			me._left_top_cornerpotrait.ggVisible=true;
+			me.__1st_floornames_ph.style.transition='none';
+			me.__1st_floornames_ph.style.visibility='hidden';
+			me.__1st_floornames_ph.ggVisible=false;
+			me.__2nd_floornames_ph.style.transition='none';
+			me.__2nd_floornames_ph.style.visibility='hidden';
+			me.__2nd_floornames_ph.ggVisible=false;
+			me.__3rd_floornames_ph.style.transition='none';
+			me.__3rd_floornames_ph.style.visibility='hidden';
+			me.__3rd_floornames_ph.ggVisible=false;
 		}
 		me._fp_close_b_ph.ggUpdatePosition=function (useTransition) {
 		}
@@ -12075,12 +12111,12 @@ function pano2vrSkin(player,base) {
 		el.ggType='image';
 		hs ='';
 		hs+='z-index: 3;';
-		hs+='height : 500px;';
-		hs+='left : calc(50% - ((500px + 0px) / 2) + 0px);';
+		hs+='height : 524px;';
+		hs+='left : calc(50% - ((550px + 0px) / 2) + 0px);';
 		hs+='position : absolute;';
-		hs+='top : calc(50% - ((500px + 0px) / 2) + 0px);';
+		hs+='top : calc(50% - ((524px + 0px) / 2) + 0px);';
 		hs+='visibility : hidden;';
-		hs+='width : 500px;';
+		hs+='width : 550px;';
 		hs+='pointer-events:none;';
 		el.setAttribute('style',hs);
 		el.style.transformOrigin='50% 50%';
@@ -12110,6 +12146,18 @@ function pano2vrSkin(player,base) {
 			{
 				newLogicStateSize = 1;
 			}
+			else if (
+				((player.getVariableValue('Tab_L') == true))
+			)
+			{
+				newLogicStateSize = 2;
+			}
+			else if (
+				((player.getVariableValue('Tab_P') == true))
+			)
+			{
+				newLogicStateSize = 3;
+			}
 			else {
 				newLogicStateSize = -1;
 			}
@@ -12130,11 +12178,25 @@ function pano2vrSkin(player,base) {
 					me.__1st_floornames_ph.style.top = 'calc(50% - (254px / 2))';
 					skin.updateSize(me.__1st_floornames_ph);
 				}
+				else if (me.__1st_floornames_ph.ggCurrentLogicStateSize == 2) {
+					me.__1st_floornames_ph.style.width='550px';
+					me.__1st_floornames_ph.style.height='524px';
+					me.__1st_floornames_ph.style.left = 'calc(50% - (550px / 2))';
+					me.__1st_floornames_ph.style.top = 'calc(50% - (524px / 2))';
+					skin.updateSize(me.__1st_floornames_ph);
+				}
+				else if (me.__1st_floornames_ph.ggCurrentLogicStateSize == 3) {
+					me.__1st_floornames_ph.style.width='680px';
+					me.__1st_floornames_ph.style.height='654px';
+					me.__1st_floornames_ph.style.left = 'calc(50% - (680px / 2))';
+					me.__1st_floornames_ph.style.top = 'calc(50% - (654px / 2))';
+					skin.updateSize(me.__1st_floornames_ph);
+				}
 				else {
-					me.__1st_floornames_ph.style.width='500px';
-					me.__1st_floornames_ph.style.height='500px';
-					me.__1st_floornames_ph.style.left = 'calc(50% - (500px / 2))';
-					me.__1st_floornames_ph.style.top = 'calc(50% - (500px / 2))';
+					me.__1st_floornames_ph.style.width='550px';
+					me.__1st_floornames_ph.style.height='524px';
+					me.__1st_floornames_ph.style.left = 'calc(50% - (550px / 2))';
+					me.__1st_floornames_ph.style.top = 'calc(50% - (524px / 2))';
 					skin.updateSize(me.__1st_floornames_ph);
 				}
 			}
@@ -12237,6 +12299,18 @@ function pano2vrSkin(player,base) {
 			{
 				newLogicStateSize = 1;
 			}
+			else if (
+				((player.getVariableValue('Tab_L') == true))
+			)
+			{
+				newLogicStateSize = 2;
+			}
+			else if (
+				((player.getVariableValue('Tab_P') == true))
+			)
+			{
+				newLogicStateSize = 3;
+			}
 			else {
 				newLogicStateSize = -1;
 			}
@@ -12255,6 +12329,20 @@ function pano2vrSkin(player,base) {
 					me.__2nd_floornames_ph.style.height='254px';
 					me.__2nd_floornames_ph.style.left = 'calc(50% - (280px / 2))';
 					me.__2nd_floornames_ph.style.top = 'calc(50% - (254px / 2))';
+					skin.updateSize(me.__2nd_floornames_ph);
+				}
+				else if (me.__2nd_floornames_ph.ggCurrentLogicStateSize == 2) {
+					me.__2nd_floornames_ph.style.width='550px';
+					me.__2nd_floornames_ph.style.height='524px';
+					me.__2nd_floornames_ph.style.left = 'calc(50% - (550px / 2))';
+					me.__2nd_floornames_ph.style.top = 'calc(50% - (524px / 2))';
+					skin.updateSize(me.__2nd_floornames_ph);
+				}
+				else if (me.__2nd_floornames_ph.ggCurrentLogicStateSize == 3) {
+					me.__2nd_floornames_ph.style.width='680px';
+					me.__2nd_floornames_ph.style.height='654px';
+					me.__2nd_floornames_ph.style.left = 'calc(50% - (680px / 2))';
+					me.__2nd_floornames_ph.style.top = 'calc(50% - (654px / 2))';
 					skin.updateSize(me.__2nd_floornames_ph);
 				}
 				else {
@@ -12364,6 +12452,18 @@ function pano2vrSkin(player,base) {
 			{
 				newLogicStateSize = 1;
 			}
+			else if (
+				((player.getVariableValue('Tab_L') == true))
+			)
+			{
+				newLogicStateSize = 2;
+			}
+			else if (
+				((player.getVariableValue('Tab_P') == true))
+			)
+			{
+				newLogicStateSize = 3;
+			}
 			else {
 				newLogicStateSize = -1;
 			}
@@ -12382,6 +12482,20 @@ function pano2vrSkin(player,base) {
 					me.__3rd_floornames_ph.style.height='254px';
 					me.__3rd_floornames_ph.style.left = 'calc(50% - (280px / 2))';
 					me.__3rd_floornames_ph.style.top = 'calc(50% - (254px / 2))';
+					skin.updateSize(me.__3rd_floornames_ph);
+				}
+				else if (me.__3rd_floornames_ph.ggCurrentLogicStateSize == 2) {
+					me.__3rd_floornames_ph.style.width='550px';
+					me.__3rd_floornames_ph.style.height='524px';
+					me.__3rd_floornames_ph.style.left = 'calc(50% - (550px / 2))';
+					me.__3rd_floornames_ph.style.top = 'calc(50% - (524px / 2))';
+					skin.updateSize(me.__3rd_floornames_ph);
+				}
+				else if (me.__3rd_floornames_ph.ggCurrentLogicStateSize == 3) {
+					me.__3rd_floornames_ph.style.width='680px';
+					me.__3rd_floornames_ph.style.height='654px';
+					me.__3rd_floornames_ph.style.left = 'calc(50% - (680px / 2))';
+					me.__3rd_floornames_ph.style.top = 'calc(50% - (654px / 2))';
 					skin.updateSize(me.__3rd_floornames_ph);
 				}
 				else {
@@ -12550,6 +12664,15 @@ function pano2vrSkin(player,base) {
 			me._left_top_cornerpotrait.style.transition='none';
 			me._left_top_cornerpotrait.style.visibility=(Number(me._left_top_cornerpotrait.style.opacity)>0||!me._left_top_cornerpotrait.style.opacity)?'inherit':'hidden';
 			me._left_top_cornerpotrait.ggVisible=true;
+			me.__1st_floornames_ph.style.transition='none';
+			me.__1st_floornames_ph.style.visibility='hidden';
+			me.__1st_floornames_ph.ggVisible=false;
+			me.__2nd_floornames_ph.style.transition='none';
+			me.__2nd_floornames_ph.style.visibility='hidden';
+			me.__2nd_floornames_ph.ggVisible=false;
+			me.__3rd_floornames_ph.style.transition='none';
+			me.__3rd_floornames_ph.style.visibility='hidden';
+			me.__3rd_floornames_ph.ggVisible=false;
 		}
 		me._outside_close_b_ph.ggUpdatePosition=function (useTransition) {
 		}
@@ -13236,6 +13359,37 @@ function pano2vrSkin(player,base) {
 			}
 			return player.getCurrentNode();
 		}
+		me._productpanel_wolf_ph_land.logicBlock_size = function() {
+			var newLogicStateSize;
+			if (
+				((player.getVariableValue('Mobile_L') == true))
+			)
+			{
+				newLogicStateSize = 0;
+			}
+			else {
+				newLogicStateSize = -1;
+			}
+			if (me._productpanel_wolf_ph_land.ggCurrentLogicStateSize != newLogicStateSize) {
+				me._productpanel_wolf_ph_land.ggCurrentLogicStateSize = newLogicStateSize;
+				me._productpanel_wolf_ph_land.style.transition='width 0s, height 0s';
+				if (me._productpanel_wolf_ph_land.ggCurrentLogicStateSize == 0) {
+					me._productpanel_wolf_ph_land.style.width='600px';
+					me._productpanel_wolf_ph_land.style.height='250px';
+					me._productpanel_wolf_ph_land.style.left = 'calc(50% - (600px / 2))';
+					me._productpanel_wolf_ph_land.style.top = 'calc(50% - (250px / 2))';
+					skin.updateSize(me._productpanel_wolf_ph_land);
+				}
+				else {
+					me._productpanel_wolf_ph_land.style.width='600px';
+					me._productpanel_wolf_ph_land.style.height='350px';
+					me._productpanel_wolf_ph_land.style.left = 'calc(50% - (600px / 2))';
+					me._productpanel_wolf_ph_land.style.top = 'calc(50% - (350px / 2))';
+					skin.updateSize(me._productpanel_wolf_ph_land);
+				}
+			}
+		}
+		me._productpanel_wolf_ph_land.logicBlock_size();
 		me._productpanel_wolf_ph_land.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
@@ -13261,7 +13415,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (me._productpanel_wolf_ph_land.ggCurrentLogicStateVisible != newLogicStateVisible) {
 				me._productpanel_wolf_ph_land.ggCurrentLogicStateVisible = newLogicStateVisible;
-				me._productpanel_wolf_ph_land.style.transition='';
+				me._productpanel_wolf_ph_land.style.transition='width 0s, height 0s';
 				if (me._productpanel_wolf_ph_land.ggCurrentLogicStateVisible == 0) {
 					me._productpanel_wolf_ph_land.style.visibility=(Number(me._productpanel_wolf_ph_land.style.opacity)>0||!me._productpanel_wolf_ph_land.style.opacity)?'inherit':'hidden';
 					me._productpanel_wolf_ph_land.ggVisible=true;
@@ -13340,6 +13494,112 @@ function pano2vrSkin(player,base) {
 			}
 			return player.getCurrentNode();
 		}
+		me._product_heading_ph_land.logicBlock_position = function() {
+			var newLogicStatePosition;
+			if (
+				((player.getVariableValue('ui_mode') == "mobile")) && 
+				((player.getVariableValue('Potrait') == false))
+			)
+			{
+				newLogicStatePosition = 0;
+			}
+			else {
+				newLogicStatePosition = -1;
+			}
+			if (me._product_heading_ph_land.ggCurrentLogicStatePosition != newLogicStatePosition) {
+				me._product_heading_ph_land.ggCurrentLogicStatePosition = newLogicStatePosition;
+				me._product_heading_ph_land.style.transition='left 0s, top 0s, width 0s, height 0s';
+				if (me._product_heading_ph_land.ggCurrentLogicStatePosition == 0) {
+					me._product_heading_ph_land.style.left = 'calc(50% - (300px / 2) - (0px / 2) + 100px)';
+					me._product_heading_ph_land.style.top = 'calc(50% - (100px / 2) - (0px / 2) + -65px)';
+				}
+				else {
+					me._product_heading_ph_land.style.left='calc(50% - ((300px + 0px) / 2) + 100px)';
+					me._product_heading_ph_land.style.top='calc(50% - ((100px + 0px) / 2) - 120px)';
+				}
+			}
+		}
+		me._product_heading_ph_land.logicBlock_position();
+		me._product_heading_ph_land.logicBlock_size = function() {
+			var newLogicStateSize;
+			if (
+				((player.getVariableValue('Mobile_L') == true))
+			)
+			{
+				newLogicStateSize = 0;
+			}
+			else {
+				newLogicStateSize = -1;
+			}
+			if (me._product_heading_ph_land.ggCurrentLogicStateSize != newLogicStateSize) {
+				me._product_heading_ph_land.ggCurrentLogicStateSize = newLogicStateSize;
+				me._product_heading_ph_land.style.transition='left 0s, top 0s, width 0s, height 0s';
+				if (me._product_heading_ph_land.ggCurrentLogicStateSize == 0) {
+					me._product_heading_ph_land.style.width='300px';
+					me._product_heading_ph_land.style.height='50px';
+					me._product_heading_ph_land.style.left = 'calc(50% - (300px / 2) - (0px / 2) + 100px)';
+					me._product_heading_ph_land.style.top = 'calc(50% - (50px / 2) - (0px / 2) + -120px)';
+					skin.updateSize(me._product_heading_ph_land);
+				}
+				else {
+					me._product_heading_ph_land.style.width='300px';
+					me._product_heading_ph_land.style.height='100px';
+					me._product_heading_ph_land.style.left = 'calc(50% - (300px / 2) - (0px / 2) + 100px)';
+					me._product_heading_ph_land.style.top = 'calc(50% - (100px / 2) - (0px / 2) + -120px)';
+					skin.updateSize(me._product_heading_ph_land);
+				}
+			}
+		}
+		me._product_heading_ph_land.logicBlock_size();
+		me._product_heading_ph_land.logicBlock_text = function() {
+			var newLogicStateText;
+			if (
+				((player.getVariableValue('Mobile_L') == true))
+			)
+			{
+				newLogicStateText = 0;
+			}
+			else {
+				newLogicStateText = -1;
+			}
+			if (me._product_heading_ph_land.ggCurrentLogicStateText != newLogicStateText) {
+				me._product_heading_ph_land.ggCurrentLogicStateText = newLogicStateText;
+				me._product_heading_ph_land.style.transition='left 0s, top 0s, width 0s, height 0s';
+				if (me._product_heading_ph_land.ggCurrentLogicStateText == 0) {
+					if (me._product_heading_ph_land.ggUpdateText) {
+					me._product_heading_ph_land.ggUpdateText=function() {
+						var params = [];
+						var hs = player._("<div class=\"ggmarkdown\"><p>48\u201d Gas Range-6 Burners\nand Infrared Charbroiler<\/p>\n<div>", params);
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					me._product_heading_ph_land.ggUpdateText();
+					} else {
+						if (me._product_heading_ph_land.ggUpdatePosition) me._product_heading_ph_land.ggUpdatePosition();
+					}
+				}
+				else {
+					if (me._product_heading_ph_land.ggUpdateText) {
+					me._product_heading_ph_land.ggUpdateText=function() {
+						var params = [];
+						var hs = player._("48\" Gas Range - 6 Burners and \nInfrared Charbroiler", params);
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					me._product_heading_ph_land.ggUpdateText();
+					} else {
+						if (me._product_heading_ph_land.ggUpdatePosition) me._product_heading_ph_land.ggUpdatePosition();
+					}
+				}
+			}
+		}
+		me._product_heading_ph_land.logicBlock_text();
 		me._product_heading_ph_land.ggUpdatePosition=function (useTransition) {
 		}
 		el=me._line_ph_land=document.createElement('div');
@@ -13440,6 +13700,31 @@ function pano2vrSkin(player,base) {
 			}
 			return player.getCurrentNode();
 		}
+		me._product_brand_ph_land.logicBlock_position = function() {
+			var newLogicStatePosition;
+			if (
+				((player.getVariableValue('Mobile_L') == true))
+			)
+			{
+				newLogicStatePosition = 0;
+			}
+			else {
+				newLogicStatePosition = -1;
+			}
+			if (me._product_brand_ph_land.ggCurrentLogicStatePosition != newLogicStatePosition) {
+				me._product_brand_ph_land.ggCurrentLogicStatePosition = newLogicStatePosition;
+				me._product_brand_ph_land.style.transition='left 0s, top 0s';
+				if (me._product_brand_ph_land.ggCurrentLogicStatePosition == 0) {
+					me._product_brand_ph_land.style.left = 'calc(50% - (200px / 2) - (0px / 2) + -175px)';
+					me._product_brand_ph_land.style.top = 'calc(50% - (40px / 2) - (0px / 2) + 100px)';
+				}
+				else {
+					me._product_brand_ph_land.style.left='calc(50% - ((200px + 0px) / 2) - 175px)';
+					me._product_brand_ph_land.style.top='calc(50% - ((40px + 0px) / 2) + 110px)';
+				}
+			}
+		}
+		me._product_brand_ph_land.logicBlock_position();
 		me._product_brand_ph_land.ggUpdatePosition=function (useTransition) {
 		}
 		me._productpanel_wolf_ph_land.appendChild(me._product_brand_ph_land);
@@ -13790,6 +14075,37 @@ function pano2vrSkin(player,base) {
 			}
 			return player.getCurrentNode();
 		}
+		me._info_scroll_area_ph_land.logicBlock_size = function() {
+			var newLogicStateSize;
+			if (
+				((player.getVariableValue('Mobile_L') == true))
+			)
+			{
+				newLogicStateSize = 0;
+			}
+			else {
+				newLogicStateSize = -1;
+			}
+			if (me._info_scroll_area_ph_land.ggCurrentLogicStateSize != newLogicStateSize) {
+				me._info_scroll_area_ph_land.ggCurrentLogicStateSize = newLogicStateSize;
+				me._info_scroll_area_ph_land.style.transition='width 0s, height 0s';
+				if (me._info_scroll_area_ph_land.ggCurrentLogicStateSize == 0) {
+					me._info_scroll_area_ph_land.style.width='300px';
+					me._info_scroll_area_ph_land.style.height='150px';
+					me._info_scroll_area_ph_land.style.left = 'calc(50% - (300px / 2) - (0px / 2) + 100px)';
+					me._info_scroll_area_ph_land.style.top = 'calc(50% - (150px / 2) - (0px / 2) + 40px)';
+					skin.updateSize(me._info_scroll_area_ph_land);
+				}
+				else {
+					me._info_scroll_area_ph_land.style.width='300px';
+					me._info_scroll_area_ph_land.style.height='200px';
+					me._info_scroll_area_ph_land.style.left = 'calc(50% - (300px / 2) - (0px / 2) + 100px)';
+					me._info_scroll_area_ph_land.style.top = 'calc(50% - (200px / 2) - (0px / 2) + 40px)';
+					skin.updateSize(me._info_scroll_area_ph_land);
+				}
+			}
+		}
+		me._info_scroll_area_ph_land.logicBlock_size();
 		me._info_scroll_area_ph_land.ggUpdatePosition=function (useTransition) {
 			{
 				var horScrollWasVisible = this.ggHorScrollVisible;
@@ -28570,7 +28886,13 @@ function pano2vrSkin(player,base) {
 		me._sr_close_b_ph.logicBlock_position();
 		me._sr_close_b_ph.logicBlock_alpha();
 		me.elementMouseOver['sr_close_b_ph']=false;
+		me._productpanel_wolf_ph_land.logicBlock_size();
 		me._productpanel_wolf_ph_land.logicBlock_visible();
+		me._product_heading_ph_land.logicBlock_position();
+		me._product_heading_ph_land.logicBlock_size();
+		me._product_heading_ph_land.logicBlock_text();
+		me._product_brand_ph_land.logicBlock_position();
+		me._info_scroll_area_ph_land.logicBlock_size();
 		me._productpanel_wolf_ph_port.logicBlock_visible();
 		me._pp_close_b_ph_port.logicBlock_position();
 		me._desktop.logicBlock_visible();
@@ -29179,7 +29501,13 @@ function pano2vrSkin(player,base) {
 			me._fp_screen_blur_ph.logicBlock_size();
 			me._sr_close_b_ph.logicBlock_position();
 			me._sr_close_b_ph.logicBlock_alpha();
+			me._productpanel_wolf_ph_land.logicBlock_size();
 			me._productpanel_wolf_ph_land.logicBlock_visible();
+			me._product_heading_ph_land.logicBlock_position();
+			me._product_heading_ph_land.logicBlock_size();
+			me._product_heading_ph_land.logicBlock_text();
+			me._product_brand_ph_land.logicBlock_position();
+			me._info_scroll_area_ph_land.logicBlock_size();
 			me._productpanel_wolf_ph_port.logicBlock_visible();
 			me._pp_close_b_ph_port.logicBlock_position();
 			me._desktop.logicBlock_visible();
@@ -29466,8 +29794,14 @@ function pano2vrSkin(player,base) {
 			me._fp_screen_blur_ph.logicBlock_size();
 			me._sr_close_b_ph.logicBlock_position();
 			me._sr_close_b_ph.logicBlock_alpha();
+			me._productpanel_wolf_ph_land.logicBlock_size();
 			me._productpanel_wolf_ph_land.logicBlock_visible();
+			me._product_heading_ph_land.logicBlock_position();
+			me._product_heading_ph_land.logicBlock_size();
+			me._product_heading_ph_land.logicBlock_text();
+			me._product_brand_ph_land.logicBlock_position();
 			me._info_scroll_area_ph_land.ggUpdatePosition();
+			me._info_scroll_area_ph_land.logicBlock_size();
 			me._productpanel_wolf_ph_port.logicBlock_visible();
 			me._info_scroll_area_ph_port.ggUpdatePosition();
 			me._pp_close_b_ph_port.logicBlock_position();
@@ -29869,7 +30203,12 @@ console.log(`UI Mode Set: ${player.getVariableValue("ui_mode")}`);
 			}
 			me._fp_screen_blur_ph.logicBlock_size();
 			me._sr_close_b_ph.logicBlock_position();
+			me._productpanel_wolf_ph_land.logicBlock_size();
 			me._productpanel_wolf_ph_land.logicBlock_visible();
+			me._product_heading_ph_land.logicBlock_size();
+			me._product_heading_ph_land.logicBlock_text();
+			me._product_brand_ph_land.logicBlock_position();
+			me._info_scroll_area_ph_land.logicBlock_size();
 			me._productpanel_wolf_ph_port.logicBlock_visible();
 			me._pp_close_b_ph_port.logicBlock_position();
 			me._showreel.logicBlock_size();
@@ -29955,6 +30294,7 @@ console.log(`UI Mode Set: ${player.getVariableValue("ui_mode")}`);
 			me._variable_Tab_P.logicBlock();
 			me._variable_Tab_L.logicBlock();
 			me._qg_heading.logicBlock_position();
+			me._product_heading_ph_land.logicBlock_position();
 		});
 		player.addListener('varchanged_Product_info', function(event) {
 			me._productpanel_wolf_ph_land.logicBlock_visible();
@@ -30081,6 +30421,7 @@ console.log(`UI Mode Set: ${player.getVariableValue("ui_mode")}`);
 			me._floorswitch_01_ph.logicBlock_position();
 			me._floorswitch_02_ph.logicBlock_position();
 			me._floorswitch_03_ph.logicBlock_position();
+			me.__1st_floornames_ph.logicBlock_size();
 			if (
 				(
 					((player.getVariableValue('Tab_L') == true))
@@ -30090,6 +30431,7 @@ console.log(`UI Mode Set: ${player.getVariableValue("ui_mode")}`);
 				me.__1st_floornames_ph.ggParameter.rx=-160;me.__1st_floornames_ph.ggParameter.ry=0;
 				me.__1st_floornames_ph.style.transform=parameterToTransform(me.__1st_floornames_ph.ggParameter);
 			}
+			me.__2nd_floornames_ph.logicBlock_size();
 			if (
 				(
 					((player.getVariableValue('Tab_L') == true))
@@ -30099,6 +30441,7 @@ console.log(`UI Mode Set: ${player.getVariableValue("ui_mode")}`);
 				me.__2nd_floornames_ph.ggParameter.rx=-160;me.__2nd_floornames_ph.ggParameter.ry=0;
 				me.__2nd_floornames_ph.style.transform=parameterToTransform(me.__2nd_floornames_ph.ggParameter);
 			}
+			me.__3rd_floornames_ph.logicBlock_size();
 			if (
 				(
 					((player.getVariableValue('Tab_L') == true))
@@ -30146,6 +30489,7 @@ console.log(`UI Mode Set: ${player.getVariableValue("ui_mode")}`);
 			me._floorswitch_01_ph.logicBlock_position();
 			me._floorswitch_02_ph.logicBlock_position();
 			me._floorswitch_03_ph.logicBlock_position();
+			me.__1st_floornames_ph.logicBlock_size();
 			if (
 				(
 					((player.getVariableValue('Tab_P') == true))
@@ -30155,6 +30499,7 @@ console.log(`UI Mode Set: ${player.getVariableValue("ui_mode")}`);
 				me.__1st_floornames_ph.ggParameter.rx=0;me.__1st_floornames_ph.ggParameter.ry=-110;
 				me.__1st_floornames_ph.style.transform=parameterToTransform(me.__1st_floornames_ph.ggParameter);
 			}
+			me.__2nd_floornames_ph.logicBlock_size();
 			if (
 				(
 					((player.getVariableValue('Tab_P') == true))
@@ -30164,6 +30509,7 @@ console.log(`UI Mode Set: ${player.getVariableValue("ui_mode")}`);
 				me.__2nd_floornames_ph.ggParameter.rx=0;me.__2nd_floornames_ph.ggParameter.ry=-110;
 				me.__2nd_floornames_ph.style.transform=parameterToTransform(me.__2nd_floornames_ph.ggParameter);
 			}
+			me.__3rd_floornames_ph.logicBlock_size();
 			if (
 				(
 					((player.getVariableValue('Tab_P') == true))
@@ -30226,6 +30572,7 @@ console.log(`UI Mode Set: ${player.getVariableValue("ui_mode")}`);
 			me._variable_Tab_L.logicBlock();
 			me._variable_Desktop.logicBlock();
 			me._qg_heading.logicBlock_position();
+			me._product_heading_ph_land.logicBlock_position();
 			me._text_2.logicBlock_text();
 		});
 		player.addListener('viewerinit', function(event) {
